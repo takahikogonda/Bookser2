@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  <header class="navbar navbar-fixed-top navbar-inverse mb-5">
+    <ul class="navbar-left">
+      <p>Bookers</p>
+    </ul>
+    <div class="continer">
+        <div id="slidemenu">
+          <% if user_signed_in? %>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <%= link_to 'Home', user_path(current_user.id) %>
+              </li>
+              <li class="">
+                <%= link_to 'users', users_path %>
+              </li>
+              <li>
+                <%= link_to 'Books', books_path %>
+              </li>
+              <li class="">
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+            <% else %>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <%= link_to 'Home', root_path %>
+              </li>
+              <li class="">
+                <%= link_to 'About', home_about_path %>
+              </li>
+              <li class="">
+                <%= link_to "sign up", new_user_registration_path %>
+              </li>
+              <li class="">
+                <%= link_to "login", new_user_session_path %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+    <%= yield %>
+  </div>
+</div>
+  </body>
+</html>

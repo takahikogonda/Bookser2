@@ -1,0 +1,32 @@
+<section class="sct-color-1 slice">
+  <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <div class="masonry-wrapper-cols">
+          <div class="masonry-gutter"></div>
+            <% books.each do |book| %>
+            <div class="masonry-block">
+              <div class="block block-image v1">
+                <div class="block-image">
+                  <div class="view view-first">
+                    <%= attachment_image_tag book, :image %>
+                  </div>
+                </div>
+                <div class="block-content">
+                  <h3 class="block-title">
+                  </h3>
+                  <%= book.body %>
+                  <ul class="inline-meta">
+                    <li>By
+                      <%= book.user.name %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
