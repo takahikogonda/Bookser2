@@ -23,12 +23,12 @@
 		<label for="book_opinion">Opinion</label>
 	</div>
 
-	<%= form_for(@book) do |f| %>
-		<% if @book.errors.any? %>
+	<%= form_for(@postbook) do |f| %>
+		<% if @postbook.errors.any? %>
   		<div id="error_explanation">
-    		<h2><%= @book.errors.count %>件のが発生しました。</h2>
+    		<h2><%= @postbook.errors.count %>件のが発生しました。</h2>
    			 <ul>
-	    		<% @book.errors.full_messages.each do |message| %>
+	    		<% @postbook.errors.full_messages.each do |message| %>
 				<li><%= message %></li>
     			<% end %>
     		</ul>
