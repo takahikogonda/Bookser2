@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     		redirect_to book_path(@book)
     	else
     		@user = current_user
-    		flash[:notice] = "error"
+    		#flash[:notice] = "error"
     		render "index"
     	end
 	end
